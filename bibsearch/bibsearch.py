@@ -676,11 +676,7 @@ def main():
     parser = argparse.ArgumentParser(description="bibsearch: Download, manage, and search a BibTeX database.\nUse '%(prog)s man' to get complete help.",
                                      formatter_class=SubcommandHelpFormatter)
     parser.add_argument('--version', '-V', action='version', version='%(prog)s {}'.format(VERSION))
-    parser.add_argument('-c', '--config_file', help="use this config file",
-                        default=os.path.join(os.path.expanduser("~"),
-                                             '.bibsearch',
-                                             "config")
-                        )
+    parser.add_argument('-c', '--config_file', help="use this config file")
     parser.set_defaults(func=lambda *_ : parser.print_help())
     subparsers = parser.add_subparsers(title="commands",
                                        description="Use '%(prog)s <command> -h' to obtain additional help.",
